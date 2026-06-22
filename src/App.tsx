@@ -5,7 +5,7 @@
 
 import { useAppStore } from './store/app-store';
 import { LoginScreen } from './components/LoginScreen';
-import { POSScreen } from './components/POSScreen';
+import { POSScreen } from './components/POSScreen.v2';
 import { BackOffice } from './components/BackOffice';
 import { GodModeScreen } from './components/GodModeScreen';
 
