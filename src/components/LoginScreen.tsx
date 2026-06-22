@@ -7,10 +7,10 @@ import { useState, useEffect } from 'react';
 import { Shield, Lock } from 'lucide-react';
 import { Button } from './Button';
 import { Input } from './Input';
-import { useAppStore } from '../store/app-store';
 import { db } from '../lib/db';
 import { generateHardwareFingerprint, validateAMCExpiry } from '../lib/hardware-fingerprint';
 import { getUserByPin, seedDefaultUsers } from '../lib/db-extended';
+import { useAppStore } from '../store/app-store.v3';
 
 export function LoginScreen() {
   const [pin, setPin] = useState('');
@@ -154,7 +154,7 @@ export function LoginScreen() {
       }
       
       // Store user info in state and authenticate
-      setAuthenticated(user.name, user.role);
+      setAuthenticated(user.name, user.pin, user.role);
       
     } catch (err) {
       console.error('Login error:', err);
